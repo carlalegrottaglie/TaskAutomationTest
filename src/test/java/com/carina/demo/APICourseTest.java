@@ -1,11 +1,8 @@
 package com.carina.demo;
 
 import com.carina.demo.api.DeleteUserMethod;
-import com.carina.demo.api.products.DeleteProduct;
-import com.carina.demo.api.products.GetProductCategories;
+import com.carina.demo.api.products.*;
 import com.jayway.jsonpath.JsonPath;
-import com.carina.demo.api.products.GetProduct;
-import com.carina.demo.api.products.PostProduct;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import io.restassured.response.Response;
@@ -20,7 +17,7 @@ public class APICourseTest implements IAbstractTest {
     {
         GetProduct getProduct = new GetProduct();
        // getProduct.addUrlParameter("q","Laptop");
-        getProduct.setIndex(5);
+        getProduct.setIndex(2);
 
         Response response = getProduct.callAPIExpectSuccess();
         getProduct.validateResponseAgainstSchema("api/products/_get/rs.schema");
@@ -84,8 +81,6 @@ public class APICourseTest implements IAbstractTest {
 
 
 
-
-
     @Test
     @MethodOwner(owner = "Carla")
     public void postProductTest()
@@ -96,5 +91,15 @@ public class APICourseTest implements IAbstractTest {
         postProduct.validateResponse();
 
     }
+    @Test
+    @MethodOwner(owner = "Carla")
+    public void patchProductTest()
+    {
+        PatchProduct patchProduct = new PatchProduct();
+        patchProduct.setProperties("api/products/product.properties");
+        patchProduct.callAPIExpectSuccess();
+        patchProduct.validateResponseAgainstSchema("api/products/_get/rs.schema");
+        patchProduct.validateResponse();
 
+    }
 }

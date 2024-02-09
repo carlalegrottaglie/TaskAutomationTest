@@ -1,0 +1,42 @@
+[2024-02-09 10:19:53] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-02-09 10:19:53] [1] [INFO] TEST [AutomationTests - postProductTest] STARTED at [19:19:53 2024-02-09]
+[2024-02-09 10:19:55] [1] [INFO] Base properties loaded: api/products/product.properties
+[2024-02-09 10:19:57] [1] [INFO] Request method:	POST
+Request URI:	https://dummyjson.com/products/add
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "id": 123,
+    "title": "ovtxxunt"
+}
+HTTP/1.1 200 OK
+access-control-allow-origin: *
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-ratelimit-limit: 100
+x-ratelimit-remaining: 99
+date: Fri, 09 Feb 2024 22:19:57 GMT
+x-ratelimit-reset: 1707517206
+content-type: application/json; charset=utf-8
+content-length: 29
+etag: W/"1d-5CiYBaR5S5e+G+3iocDHlYpZdNU"
+vary: Accept-Encoding
+server: railway
+
+{
+    "id": 101,
+    "title": "ovtxxunt"
+}
+
+[2024-02-09 10:19:57] [1] [INFO] TEST [AutomationTests - postProductTest] PASSED at [19:19:57 2024-02-09]

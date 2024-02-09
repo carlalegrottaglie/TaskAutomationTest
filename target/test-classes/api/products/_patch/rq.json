@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "title": "iPhone 15",
+  "description": "An apple mobile which is nothing like apple",
+  "price": 1549,
+  "discountPercentage": 5.00,
+  "rating": 14.57,
+  "stock": 25,
+  "brand": "Apple",
+  "category": "smartphones",
+  "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+  "images": [
+    "https://cdn.dummyjson.com/product-images/1/1.jpg",
+    "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+  ]
+}

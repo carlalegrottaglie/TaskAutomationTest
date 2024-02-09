@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-08T13:33:44 ART" name="Carina Demo Tests - Hello World" finished-at="2024-02-08T13:33:44 ART" duration-ms="187">
+    <groups>
+    </groups>
+    <test started-at="2024-02-08T13:33:44 ART" name="Hello World test" finished-at="2024-02-08T13:33:44 ART" duration-ms="187">
+      <class name="com.carina.demo.HelloWorld">
+        <test-method signature="helloWorld()[pri:0, instance:com.carina.demo.HelloWorld@5c3f9618]" started-at="2024-02-08T13:33:44 ART" name="helloWorld" finished-at="2024-02-08T13:33:44 ART" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helloWorld -->
+        <test-method is-config="true" signature="onCarinaAfterMethod()[pri:0, instance:com.carina.demo.HelloWorld@5c3f9618]" started-at="2024-02-08T13:33:44 ART" name="onCarinaAfterMethod" finished-at="2024-02-08T13:33:44 ART" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onCarinaAfterMethod -->
+      </class> <!-- com.carina.demo.HelloWorld -->
+    </test> <!-- Hello World test -->
+  </suite> <!-- Carina Demo Tests - Hello World -->
+</testng-results>

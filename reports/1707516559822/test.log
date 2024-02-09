@@ -1,0 +1,22 @@
+[2024-02-09 10:09:19] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.gsmarena.com
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+===============================================
+
+[2024-02-09 10:09:20] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-02-09 10:09:23] [1] [INFO] [TestNG] Running:
+  C:\Users\CyA\AppData\Local\JetBrains\IdeaIC2023.3\temp-testng-customsuite.xml
+
+[2024-02-09 10:09:23] [1] [INFO] Set thread-count=1
+[2024-02-09 10:09:23] [1] [INFO] Set data-provider-thread-count=1
+[2024-02-09 10:09:24] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-02-09 10:09:27] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-02-09 10:09:27] [1] [INFO] RESULT #1: TEST [AutomationTests - postProductTest] FAIL [log=file://C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\.\reports\1707516559822/eae82bcc-cf61-4cdb-a30f-0d6b0b4dc5e7/test.log]

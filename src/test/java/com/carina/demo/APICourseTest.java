@@ -3,11 +3,15 @@ package com.carina.demo;
 import com.carina.demo.api.DeleteUserMethod;
 import com.carina.demo.api.products.*;
 import com.jayway.jsonpath.JsonPath;
+import com.zebrunner.carina.api.apitools.validation.JsonComparatorContext;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
+
+import java.sql.Date;
+import java.util.Objects;
 
 public class APICourseTest implements IAbstractTest {
 
@@ -69,14 +73,12 @@ public class APICourseTest implements IAbstractTest {
     public void deleteProductTest() throws AssertionError {
         // Create an instance of DeleteProduct
         DeleteProduct deleteProduct = new DeleteProduct();
-
         deleteProduct.setProperties("api/products/product.properties");
-
-        // Call the API to delete the product and expect success
         deleteProduct.callAPIExpectSuccess();
 
-        // Validate the response after deleting the product
-      //  deleteProduct.validateResponse();
+        JsonComparatorContext comparatorContext = JsonComparatorContext.context()
+                .<String>withPredicate("isDateValid", Objects::nonNull);
+        deleteProduct.validateResponse(comparatorContext);
     }
 
 
@@ -87,6 +89,8 @@ public class APICourseTest implements IAbstractTest {
     {
         PostProduct postProduct = new PostProduct();
         postProduct.setProperties("api/products/product.properties");
+
+
         postProduct.callAPIExpectSuccess();
         postProduct.validateResponse();
 

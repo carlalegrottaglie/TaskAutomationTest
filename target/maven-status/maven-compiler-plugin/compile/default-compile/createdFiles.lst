@@ -1,6 +1,7 @@
 com\carina\demo\gui\pages\android\BrandModelsPage.class
 com\carina\demo\mobile\gui\pages\android\CarinaDescriptionPage.class
 com\carina\demo\mobile\gui\pages\common\ContactUsPageBase.class
+com\carina\demo\api\products\PatchProduct.class
 com\carina\demo\gui\components\compare\ModelSpecs.class
 com\carina\demo\mobile\gui\pages\ios\SaucePage.class
 com\carina\demo\api\DeleteUserMethod.class
@@ -16,6 +17,7 @@ com\carina\demo\api\GetUserMethods.class
 com\carina\demo\api\products\GetProductCategories.class
 com\carina\demo\db\models\User.class
 com\carina\demo\gui\pages\common\CompareModelsPageBase.class
+com\carina\demo\gui\bajalibros_pages\LoginPage.class
 com\carina\demo\gui\pages\desktop\BrandModelsPage.class
 com\carina\demo\db\models\UserPreference$Name.class
 com\carina\demo\utils\MobileContextUtils.class
@@ -43,6 +45,7 @@ com\carina\demo\mobile\gui\pages\android\ChartsPage.class
 com\carina\demo\websocket\WebsocketClientEndpoint.class
 com\carina\demo\gui\components\NewsItem.class
 com\carina\demo\mobile\gui\pages\common\UIElementsPageBase.class
+com\carina\demo\WebBajaLibrosTest.class
 com\carina\demo\gui\pages\desktop\AllBrandsPage.class
 com\carina\demo\gui\components\ModelItem.class
 com\carina\demo\mobile\gui\pages\android\UIElementsPage.class
@@ -65,6 +68,7 @@ com\carina\demo\utils\ArtifactUtils.class
 com\carina\demo\mobile\gui\pages\android\DragAndDropPage.class
 com\carina\demo\gui\pages\common\HomePageBase.class
 com\carina\demo\gui\pages\ios\CompareModelsPage.class
+com\carina\demo\gui\bajalibros_pages\HomePage.class
 com\carina\demo\gui\pages\desktop\AttachFilePage.class
 com\carina\demo\mobile\gui\pages\ios\CarinaDescriptionPage.class
 com\carina\demo\gui\pages\desktop\WikipediaHomePage.class

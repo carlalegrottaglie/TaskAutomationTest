@@ -3,9 +3,12 @@ package com.carina.demo.gui.bajalibros_pages;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 
 public class LoginPage extends AbstractPage {
@@ -14,7 +17,7 @@ public class LoginPage extends AbstractPage {
     private ExtendedWebElement emailInputField;
     // @FindBy(css = "#email")
    // @FindBy(css = "data[Frontuser][password]")
-    @FindBy(xpath = "//input[@id = 'FrontuserPassword']")
+    @FindBy(xpath = "//input[@id='FrontuserPassword']")
     private ExtendedWebElement passInputField;
    // <input type="password" name="data[Frontuser][password]" tabindex="8" id="FrontuserPassword" class="validate browser-default valid" pattern=".{6,}" title="Minimo 6 caracteres" placeholder="">
 
@@ -82,4 +85,12 @@ public class LoginPage extends AbstractPage {
    }
 
 
+    public ExtendedWebElement getPasswordField() {
+
+        return passInputField;
+    }
+
+    public ExtendedWebElement getEmailField() {
+        return emailInputField;
+    }
 }

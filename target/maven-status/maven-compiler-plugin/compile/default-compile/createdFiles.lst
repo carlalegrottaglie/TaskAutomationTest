@@ -14,6 +14,7 @@ com\carina\demo\gui\pages\ios\NewsPage.class
 com\carina\demo\gui\pages\common\NewsPageBase.class
 com\carina\demo\api\PostUserMethod.class
 com\carina\demo\api\GetUserMethods.class
+com\carina\demo\gui\bajalibros_pages\AbstractBajaLibros.class
 com\carina\demo\api\products\GetProductCategories.class
 com\carina\demo\db\models\User.class
 com\carina\demo\gui\pages\common\CompareModelsPageBase.class
@@ -47,7 +48,10 @@ com\carina\demo\gui\components\NewsItem.class
 com\carina\demo\mobile\gui\pages\common\UIElementsPageBase.class
 com\carina\demo\WebBajaLibrosTest.class
 com\carina\demo\gui\pages\desktop\AllBrandsPage.class
+com\carina\demo\gui\bajalibros_pages\RegistrationPage.class
 com\carina\demo\gui\components\ModelItem.class
+com\carina\demo\gui\bajalibros_pages\CustomSearchContext.class
+com\carina\demo\gui\bajalibros_pages\components\CartForm.class
 com\carina\demo\mobile\gui\pages\android\UIElementsPage.class
 com\carina\demo\mobile\gui\pages\common\CarinaDescriptionPageBase.class
 com\carina\demo\gui\pages\android\HomePage.class
@@ -64,6 +68,7 @@ com\carina\demo\gui\pages\ios\ModelInfoPage.class
 com\carina\demo\api\products\PostProduct.class
 com\carina\demo\gui\components\footer\FooterMenu.class
 com\carina\demo\db\models\UserPreference.class
+com\carina\demo\gui\bajalibros_pages\BookPage.class
 com\carina\demo\utils\ArtifactUtils.class
 com\carina\demo\mobile\gui\pages\android\DragAndDropPage.class
 com\carina\demo\gui\pages\common\HomePageBase.class

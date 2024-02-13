@@ -3,28 +3,26 @@ package com.carina.demo.gui.bajalibros_pages;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 
 public class LoginPage extends AbstractPage {
 
+    //private final String specificPageUrl = "https://www.bajalibros.com/AR/Login";
     @FindBy(xpath = "//input[@id = 'FrontuserEmail']")
     private ExtendedWebElement emailInputField;
     // @FindBy(css = "#email")
-   // @FindBy(css = "data[Frontuser][password]")
+    // @FindBy(css = "data[Frontuser][password]")
     @FindBy(xpath = "//input[@id='FrontuserPassword']")
     private ExtendedWebElement passInputField;
-   // <input type="password" name="data[Frontuser][password]" tabindex="8" id="FrontuserPassword" class="validate browser-default valid" pattern=".{6,}" title="Minimo 6 caracteres" placeholder="">
+    // <input type="password" name="data[Frontuser][password]" tabindex="8" id="FrontuserPassword" class="validate browser-default valid" pattern=".{6,}" title="Minimo 6 caracteres" placeholder="">
 
-   // @FindBy(css = "Ingresar")
+    // @FindBy(css = "Ingresar")
 
-   // <button class="button-register-login " type="submit" name="Login" tabindex="3">Ingresar</button>
-   @FindBy(className = "button-register-login")
+    // <button class="button-register-login " type="submit" name="Login" tabindex="3">Ingresar</button>
+    @FindBy(className = "button-register-login")
     private ExtendedWebElement loginButton;
 
 
@@ -32,13 +30,13 @@ public class LoginPage extends AbstractPage {
     private ExtendedWebElement emailErrorMessage;
 
 
-   // /html/body/div[2]/div/div/form/div[2]/div[3]/p[2]
-   // @FindBy(xpath = "//*text() = 'La contraseña ingresada es incorrecta, por favor corrige y prueba nuevamente'")
+    // /html/body/div[2]/div/div/form/div[2]/div[3]/p[2]
+    // @FindBy(xpath = "//*text() = 'La contraseña ingresada es incorrecta, por favor corrige y prueba nuevamente'")
     @FindBy(xpath = "/html/body/div[2]/div/div/form/div[2]/div[3]/p[2]")
     private ExtendedWebElement passErrorMessage;
 
 
-    @FindBy(xpath ="//*[@id= 'create-account']")
+    @FindBy(xpath = "//*[@id= 'create-account']")
     private ExtendedWebElement createBtn;
 
     public LoginPage(WebDriver driver) {
@@ -46,20 +44,20 @@ public class LoginPage extends AbstractPage {
     }
 
 
-    public void typeEmail(String email)
-    {
+    public void typeEmail(String email) {
+        emailInputField.isElementPresent();
         emailInputField.type(email);
 
     }
 
-    public void typePass(String pass)
-    {
+    public void typePass(String pass) {
+
         passInputField.type(pass);
 
     }
-    public void clickLoginBtn()
-    {
-       loginButton.click();
+
+    public void clickLoginBtn() {
+        loginButton.click();
         new HomePage(getDriver());
     }
 
@@ -72,25 +70,27 @@ public class LoginPage extends AbstractPage {
         return emailErrorMessage.isElementPresent();
 
     }
+
     public boolean isPassErrorMessage() {
         return passErrorMessage.isElementPresent();
 
     }
 
-     public RegistrationPage clickCreateBtn()
-   {
-       createBtn.click();
-       return new RegistrationPage(getDriver());
+    public RegistrationPage clickCreateBtn() {
+        createBtn.click();
+        return new RegistrationPage(getDriver());
 
-   }
+    }
 
 
-    public ExtendedWebElement getPasswordField() {
+    public WebElement getPasswordField() {
 
-        return passInputField;
+        return (WebElement) passInputField;
     }
 
     public ExtendedWebElement getEmailField() {
         return emailInputField;
     }
+
+
 }

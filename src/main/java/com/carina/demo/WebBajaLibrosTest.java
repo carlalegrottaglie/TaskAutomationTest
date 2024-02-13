@@ -1,23 +1,21 @@
 package com.carina.demo;
 
-import com.carina.demo.gui.bajalibros_pages.BookPage;
-import com.carina.demo.gui.bajalibros_pages.HomePage;
-import com.carina.demo.gui.bajalibros_pages.LoginPage;
-import com.carina.demo.gui.bajalibros_pages.RegistrationPage;
+import com.carina.demo.gui.bajalibros_pages.*;
 import com.carina.demo.gui.bajalibros_pages.components.CartForm;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.utils.IWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
+import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import java.lang.reflect.Field;
 
 
 import java.awt.*;
 import java.time.Duration;
+import java.util.ArrayList;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -83,19 +81,45 @@ public class WebBajaLibrosTest implements IAbstractTest {
       };
    }
 
+
+   @Test
+   public void searchTest() throws AWTException, InterruptedException {
+
+        HomePage homePage = new HomePage(getDriver());
+
+      homePage.openURL("https://www.bajalibros.com/AR");
+      homePage.waitForJSToLoad(10);
+
+      homePage.searchTextType("el gran engaño");
+     homePage.searchBtnClick();
+      SearchPage searchPage= new SearchPage(getDriver());
+      searchPage.buyBtnClick2();
+
+
+   }
+
+
+
+
    @Test
    public void cartTest() throws AWTException, InterruptedException {
 
-      LoginPage loginPage = new LoginPage(getDriver());
-      loginPage.open();
-      loginPage.typeEmail("clegrott@hotmail.com");
-      System.out.println("********Valor!" + loginPage.getEmailField().getText());
-
-      loginPage.typePass("*7YiAP4G6YPmi$J");
-
-      loginPage.clickLoginBtn();
+//      LoginPage loginPage = new LoginPage(getDriver());
+//      loginPage.open();
+//      loginPage.typeEmail("clegrott@hotmail.com");
+//      System.out.println("********Valor!" + loginPage.getEmailField().getText());
+//
+//      loginPage.typePass("*7YiAP4G6YPmi$J");
+//      Wait<WebDriver> waiter = new FluentWait<>(getDriver()).
+//              withTimeout(Duration.ofSeconds(5))
+//              .pollingEvery(Duration.ofMillis(500));
+//
+//      loginPage.clickLoginBtn();
 
       HomePage homePage = new HomePage(getDriver());
+
+      homePage.openURL("https://www.bajalibros.com/AR");
+      homePage.waitForJSToLoad(10);
 
       try {
          //wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("html.webp body.www div.container-books.home div.container div.wrap.landing div.carousel-standard div#basic347.frame ul.clearfix li a")));
@@ -110,9 +134,22 @@ public class WebBajaLibrosTest implements IAbstractTest {
 
       bookPage.waitForJSToLoad(10);
       bookPage.buyBtnClick();
-
+ //     bookPage.buyBtnClick2();
+      bookPage.cartBtnAutoOpen();
          //homePage.cartBtnClick();
          CartForm cartForm =bookPage.getCartForm();
+
+      cartForm.isUIObjectPresent();
+      AbstractUIElementLister abstractUIElementLister= new AbstractUIElementLister();
+      abstractUIElementLister.list(bookPage);
+     // cartForm.assertUIObjectPresent();
+
+
+      System.out.println(bookPage.allElementsPresent());
+//      bookPage.assertElementWithTextPresent(cartForm.getConfirmBuyFooterBtn(),"Finalizar");
+//      bookPage.assertElementWithTextPresent(cartForm.getEliminateBookBtn(),"Mi Carrito");
+//
+//      cartForm.eliminateBookBtnClick();
          cartForm.confirmBuyFooterBtnClick();
 
    }
@@ -132,13 +169,13 @@ public class WebBajaLibrosTest implements IAbstractTest {
 
 //    //  cartForm.eliminateBookBtnClick();
 
-     // cartForm.waitUntil(ExpectedConditions.visibilityOf((WebElement) cartForm), 1000) ;
-     // bookPage.cartBtnClick();
+      // cartForm.waitUntil(ExpectedConditions.visibilityOf((WebElement) cartForm), 1000) ;
+      // bookPage.cartBtnClick();
       CartForm cartForm = homePage.getCartForm();
+      cartForm.eliminateBookBtnClick();
       cartForm.confirmBuyFooterBtnClick();
 
       //homePage.searchTextType("hola");
-
 
 
    }

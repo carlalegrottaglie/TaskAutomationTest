@@ -10,7 +10,7 @@ import javax.naming.ldap.ExtendedRequest;
 
 public class HomePage extends AbstractBajaLibros {
 
-
+    //private final String specificPageUrl = "https://www.bajalibros.com/AR";
 
     @FindBy(css = "html.webp body.www div.container-books.home div.container div.wrap.landing div.carousel-standard div#basic347.frame ul.clearfix li a")
     private ExtendedWebElement book1;

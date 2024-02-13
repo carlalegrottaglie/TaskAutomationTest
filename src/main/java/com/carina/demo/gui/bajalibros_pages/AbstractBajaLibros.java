@@ -16,28 +16,46 @@ abstract class AbstractBajaLibros extends AbstractPage {
 
     @FindBy(xpath = "//div[@class='header-search']//input[@id='searchKeyword']")
     protected ExtendedWebElement searchText;
+
+    @FindBy(xpath = "/html/body/header/div[2]/div[1]/div[2]/form/button[1]")
+    protected ExtendedWebElement searchBtn;
     @FindBy(xpath = "//*[@id='nav-cart']")
     protected ExtendedWebElement cartBtn;
     //h2[normalize-space()='Mi Carrito']
-    @FindBy(className= "//h2[normalize-space()='Mi Carrito']")
+    @FindBy(xpath = "//h2[normalize-space()='Mi Carrito']")
     protected CartForm cartForm;
 
     protected AbstractBajaLibros(WebDriver driver) {
         super(driver);
+        cartForm= new CartForm(getDriver(),searchContext);
     }
 
 
     public CartForm getCartForm() {
-        return cartForm= new CartForm(getDriver(),searchContext);
+        cartBtn.isElementPresent();
+        return cartForm;
     }
 
+    public void cartBtnAutoOpen()
+    {
+        cartBtn.isElementPresent();
+
+
+    }
 
     public void cartBtnClick()
     {
+        cartBtn.isElementPresent();
         cartBtn.click();
 
     }
 
+    public void searchBtnClick()
+    {
+        searchBtn.isElementPresent();
+        searchBtn.click();
+
+    }
 
     public void searchTextType(String text)
     {

@@ -35,16 +35,26 @@ public class BookPage extends AbstractBajaLibros  {
     @FindBy(css = "body > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)")
     private ExtendedWebElement buyBtn;
 
+    @FindBy(xpath= "//a[@title='El gran engaño - Mariana Mazzucato']//canvas[@class='progressiveMedia-canvas']")
+    private ExtendedWebElement buyBtn2;
+
     public BookPage(WebDriver driver) {
         super(driver);
     }
 
     public void buyBtnClick()
     {
+        buyBtn.isElementPresent();
        buyBtn.click();
 
     }
-    public void buyBtnClick2() throws AWTException, InterruptedException {
+    public void buyBtnClick2()
+    {
+        buyBtn2.isElementPresent();
+        buyBtn2.click();
+
+    }
+    public void buyBtnClick3() throws AWTException, InterruptedException {
 //
 //        WebElement element = driver.findElement(By.id("buyDetailButton"));
 //

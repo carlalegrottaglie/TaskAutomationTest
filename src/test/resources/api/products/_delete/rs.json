@@ -17,8 +17,5 @@
     "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
   ],
   "isDeleted": true,
-  "deletedOn": {
-    "type": "string",
-    "format": "date-time"
-  }
+  "deletedOn": "predicate:isDateValid"
 }

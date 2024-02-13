@@ -10,7 +10,7 @@ com\carina\demo\IOSPreferencesTest.class
 com\carina\demo\regression\esg\ArtifactTest.class
 com\carina\demo\regression\dataprovider\DataproviderRetryTest.class
 com\carina\demo\IOSSafariTest.class
-com\carina\demo\FacebookTest.class
+com\carina\demo\WebFacebookTest.class
 com\carina\demo\MobileDragAndDropTest.class
 com\carina\demo\WebSampleSingleDriver.class
 com\carina\demo\regression\attachfile\AttachFileTest.class

@@ -11,8 +11,6 @@ import org.openqa.selenium.support.FindBy;
 
 abstract class AbstractBajaLibros extends AbstractPage {
 
-    private final CustomSearchContext  searchContext = new CustomSearchContext () ;
-
 
     @FindBy(xpath = "//div[@class='header-search']//input[@id='searchKeyword']")
     protected ExtendedWebElement searchText;
@@ -27,7 +25,8 @@ abstract class AbstractBajaLibros extends AbstractPage {
 
     protected AbstractBajaLibros(WebDriver driver) {
         super(driver);
-        cartForm= new CartForm(getDriver(),searchContext);
+        CustomSearchContext searchContext = new CustomSearchContext();
+        cartForm= new CartForm(getDriver(), searchContext);
     }
 
 

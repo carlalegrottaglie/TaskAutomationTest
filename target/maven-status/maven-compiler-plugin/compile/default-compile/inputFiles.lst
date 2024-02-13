@@ -42,6 +42,7 @@ C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carin
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\api\GetUserMethods.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\pages\desktop\AllBrandsPage.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\soap\LookupCityMethod.java
+C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\bajalibros_pages\SearchPage.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\utils\ConnectionFactory.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\bajalibros_pages\components\CartForm.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\api\PostUserMethod.java
@@ -64,6 +65,7 @@ C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carin
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\components\compare\CandidateBlock.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\api\DeleteUserMethod.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\pages\desktop\BrandModelsPage.java
+C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\bajalibros_pages\AbstractUIElementLister.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\gui\bajalibros_pages\RegistrationPage.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\websocket\EndpointUtils.java
 C:\Users\CyA\IdeaProjects\TestCarinaDemo\AutomationTests\src\main\java\com\carina\demo\db\mappers\UserMapper.java

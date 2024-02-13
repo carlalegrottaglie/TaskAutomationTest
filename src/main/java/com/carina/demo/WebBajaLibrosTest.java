@@ -3,22 +3,16 @@ package com.carina.demo;
 import com.carina.demo.gui.bajalibros_pages.*;
 import com.carina.demo.gui.bajalibros_pages.components.CartForm;
 import com.zebrunner.carina.core.IAbstractTest;
-import com.zebrunner.carina.utils.IWebElement;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
-import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import java.lang.reflect.Field;
-
-
 import java.awt.*;
 import java.time.Duration;
-import java.util.ArrayList;
+
 
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+
 
 public class WebBajaLibrosTest implements IAbstractTest {
 
@@ -175,7 +169,6 @@ public class WebBajaLibrosTest implements IAbstractTest {
       cartForm.eliminateBookBtnClick();
       cartForm.confirmBuyFooterBtnClick();
 
-      //homePage.searchTextType("hola");
 
 
    }

@@ -31,7 +31,7 @@ public class FacebookPage extends AbstractPage {
 
     @FindBy(xpath = "//*[@data-testid='open-registration-form-button']")
     private ExtendedWebElement createNewAccBtn2;
-    @FindBy(xpath = "/html/body/div[3]/Ndiv[2]/div/div")
+    @FindBy(xpath = "/html/body/div[3]/div[2]/div/div")
     private FacebookNewAccount facebookNewAccount;
 
 
@@ -55,9 +55,8 @@ public class FacebookPage extends AbstractPage {
     }
 
     public FacebookNewAccount getFacebookNewAccount()
-{   CustomSearchContext searchContext = new CustomSearchContext();
-    FacebookNewAccount facebookNewAccount = new FacebookNewAccount(getDriver(), searchContext);
-    return facebookNewAccount;
-}
+    {
+        return facebookNewAccount;
+    }
 
 }

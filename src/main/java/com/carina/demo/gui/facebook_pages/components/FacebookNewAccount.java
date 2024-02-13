@@ -18,7 +18,8 @@ public class FacebookNewAccount extends AbstractUIObject {
 
     @FindBy(xpath ="//*[@name = 'reg_email__']")
     private ExtendedWebElement emailInputField;
-
+    @FindBy(xpath ="//*[@name = 'reg_email_confirmation__']")
+    private ExtendedWebElement confirmEmailInputField;
     @FindBy(xpath ="//*[@id = 'password_step_input']")
     private ExtendedWebElement passwordInputField;
 
@@ -56,7 +57,6 @@ public class FacebookNewAccount extends AbstractUIObject {
 
     }
 
-
     public void typeLastName(String lastName) {
         lastNameInputField.isElementPresent();
         lastNameInputField.type(lastName);
@@ -67,24 +67,30 @@ public class FacebookNewAccount extends AbstractUIObject {
         emailInputField.type(email);
     }
 
+
+    public void typeConfirmEmail(String email) {
+        confirmEmailInputField.isElementPresent();
+        confirmEmailInputField.type(email);
+    }
+
     public void typePassword(String password) {
         passwordInputField.isElementPresent();
         passwordInputField.type(password);
     }
 
-    public void selectBirthMonth(String month) {
+    public void selectBirthMonth(Integer month) {
         monthDropdown.isElementPresent();
-        monthDropdown.select(String.valueOf(month));
+        monthDropdown.select(month-1);
     }
 
-    public void selectBirthDay(String day) {
+    public void selectBirthDay(Integer day) {
         dayDropdown.isElementPresent();
-        dayDropdown.select(String.valueOf(day));
+        dayDropdown.select(day.toString());
     }
 
-    public void selectBirthYear(String year) {
+    public void selectBirthYear(Integer year) {
         yearDropdown.isElementPresent();
-        yearDropdown.select(String.valueOf(year));
+        yearDropdown.select(year.toString());
     }
 
     public void selectMaleGender() {

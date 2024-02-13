@@ -19,10 +19,11 @@ public class WebFacebookTest implements IAbstractTest {
             facebookNewAccount.typeName("Carla");
             facebookNewAccount.typeLastName("Legrottaglie") ;
             facebookNewAccount.typeEmail("clegrott@hotmail.com");
+            facebookNewAccount.typeConfirmEmail("clegrott@hotmail.com");
             facebookNewAccount.typePassword("jkfklfjsfjñ");
-            facebookNewAccount.selectBirthMonth("2");
-            facebookNewAccount.selectBirthDay("7");
-            facebookNewAccount.selectBirthYear("1980");
+            facebookNewAccount.selectBirthDay(7);
+            facebookNewAccount.selectBirthMonth(2);
+            facebookNewAccount.selectBirthYear(1980);
             facebookNewAccount.selectFemaleGender();
             facebookNewAccount.clickSignUpButton();
 

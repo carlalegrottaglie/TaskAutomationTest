@@ -14,11 +14,15 @@ public class CartForm extends AbstractUIObject {
    // @FindBy(partialLinkText ="<a class=\"action-confirm-checkout\" href=\"/AR/Confirmar\" title=\"Confirma los pedidos del carrito de compra\" id=\"confirmBuyFooter\">Finalizar compra</a>")
    // <a class="action-confirm-checkout" href="/AR/Confirmar" title="Confirma los pedidos del carrito de compra" id="confirmBuyFooter">Finalizar compra</a>
  
-   @FindBy(tagName = "Finalizar compra")
+   //@FindBy(tagName = "Finalizar compra")
+   @FindBy(xpath= "//div[@class='detail-ebook desktop']//div[@class='col-detail price hide-on-small-only']//div[@class='content-price']//div[1]//a[1]")
+  // @FindBy(css = "body > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)")
+   private ExtendedWebElement buyBtn;
    //@FindBy(linkText= "<a id=\"confirmBuyFooter\" class=\"action-confirm-checkout\" href=\"/AR/Confirmar\" title=\"Confirma los pedidos del carrito de compra\">")
-   private ExtendedWebElement confirmBuyFooterBtn;
+   @FindBy(xpath= "/html/body/div[10]/div[2]/div[2]/div/a")
+    private ExtendedWebElement confirmBuyFooterBtn;
 //<a class="action-confirm-checkout" href="/AR/Confirmar" title="Confirma los pedidos del carrito de compra" id="confirmBuyFooter">Finalizar compra</a>
-    @FindBy(xpath = "/html/body/div[10]/ul/li/div[3]/a")
+    @FindBy(xpath = "/html[1]/body[1]/div[10]/ul[1]/li[1]/div[3]/a[1]/*[name()='svg'][1]/*[name()='g'][1]/*[name()='g'][1]/*[name()='g'][1]/*[name()='path'][2]")
     private ExtendedWebElement eliminateBookBtn;
 
 

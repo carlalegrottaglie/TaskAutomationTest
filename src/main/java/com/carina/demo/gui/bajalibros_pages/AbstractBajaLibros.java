@@ -20,7 +20,10 @@ abstract class AbstractBajaLibros extends AbstractPage {
     @FindBy(xpath = "//*[@id='nav-cart']")
     protected ExtendedWebElement cartBtn;
     //h2[normalize-space()='Mi Carrito']
-    @FindBy(xpath = "//h2[normalize-space()='Mi Carrito']")
+    //@FindBy(xpath = "//h2[normalize-space()='Mi Carrito']")
+    @FindBy(xpath= "//div[@class='detail-ebook desktop']//div[@class='col-detail price hide-on-small-only']//div[@class='content-price']//div[1]//a[1]")
+  //  @FindBy(css = "body > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)")
+    private ExtendedWebElement buyBtn;
     protected CartForm cartForm;
 
     protected AbstractBajaLibros(WebDriver driver) {

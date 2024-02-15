@@ -31,8 +31,8 @@ public class BookPage extends AbstractBajaLibros  {
    // @FindBy(xpath= "@title='Permite iniciar el proceso de compra'")
     //@FindBy(partialLinkText = "comprar")
    // @FindBy(xpath = "//a[text()='%s']")
-    //@FindBy(xpath= "//div[@class='detail-ebook desktop']//div[@class='col-detail price hide-on-small-only']//div[@class='content-price']//div[1]//a[1]")
-    @FindBy(css = "body > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)")
+    @FindBy(xpath= "//div[@class='detail-ebook desktop']//div[@class='col-detail price hide-on-small-only']//div[@class='content-price']//div[1]//a[1]")
+   // @FindBy(css = "body > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)")
     private ExtendedWebElement buyBtn;
 
     @FindBy(xpath= "//a[@title='El gran engaño - Mariana Mazzucato']//canvas[@class='progressiveMedia-canvas']")
@@ -44,7 +44,7 @@ public class BookPage extends AbstractBajaLibros  {
 
     public void buyBtnClick()
     {
-        buyBtn.isElementPresent();
+       buyBtn.isElementPresent();
        buyBtn.click();
 
     }

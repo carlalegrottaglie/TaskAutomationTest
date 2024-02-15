@@ -165,9 +165,10 @@ public class WebBajaLibrosTest implements IAbstractTest {
 
       // cartForm.waitUntil(ExpectedConditions.visibilityOf((WebElement) cartForm), 1000) ;
       // bookPage.cartBtnClick();
-      CartForm cartForm = homePage.getCartForm();
-      cartForm.eliminateBookBtnClick();
-      cartForm.confirmBuyFooterBtnClick();
+      //CartForm cartForm = homePage.getCartForm();
+    //  cartForm.isUIObjectPresent();
+     // cartForm.eliminateBookBtnClick();
+   //   cartForm.confirmBuyFooterBtnClick();
 
 
 

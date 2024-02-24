@@ -34,7 +34,7 @@ abstract class AbstractBajaLibros extends AbstractPage {
 
 
     public CartForm getCartForm() {
-        cartBtn.isElementPresent();
+       // cartBtn.isElementPresent();
         return cartForm;
     }
 

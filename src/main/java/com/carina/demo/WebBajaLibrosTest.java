@@ -150,27 +150,75 @@ public class WebBajaLibrosTest implements IAbstractTest {
    @Test
    public void buyTest() throws AWTException, InterruptedException {
 
+      LoginPage loginPage = new LoginPage(getDriver());
+      loginPage.open();
+
+      loginPage.waitForJSToLoad(10);
+      loginPage.typeEmail("clegrott@hotmail.com");
+      WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10)); // Use Duration object
+      wait.until(ExpectedConditions.elementToBeClickable(loginPage.getLoginBtn()));
+      loginPage.typePass("*7YiAP4G6YPmi$J");
+      // Wait until the login button is clickable
+      wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10)); // Use Duration object
+      wait.until(ExpectedConditions.elementToBeClickable(loginPage.getLoginBtn()));
+
+      loginPage.clickLoginBtn();
+
       HomePage homePage = new HomePage(getDriver());
       homePage.openURL("https://www.bajalibros.com/AR/Ugly-Love-Pideme-cualquier-cos-Colleen-Hoover-eBook-2313648");
       BookPage bookPage = new BookPage(getDriver());
 
+      WebDriver driver= homePage.getDriver();
+      driver.get("https://www.bajalibros.com/AR/Ugly-Love-Pideme-cualquier-cos-Colleen-Hoover-eBook-2313648");
+      driver.manage().window().maximize() ;
 
-      bookPage.waitForJSToLoad(10);
-      bookPage.buyBtnClick();
+
+      WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+      wait2.until(new ExpectedCondition<Boolean>() {
+         public Boolean apply(WebDriver webDriver) {
+            String readyState = ((JavascriptExecutor) webDriver).executeScript("return document.readyState").toString();
+            return readyState.equals("complete");
+         }
+      });
 
 
-//   homePage.cartBtnClick();
+      if (driver.findElements(By.cssSelector("[id='title-Close dialog 2'] + circle")).size() != 0)
+
+         driver.findElement(By.cssSelector("[id='title-Close dialog 2'] + circle")).click();
+
+      driver.findElements(By.cssSelector("a#buyDetailButton")).get(2).click();
+
+      try {
+
+         bookPage.buyBtnClick();
+         WebElement element2 = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(By.id("confirmBuyFooter")));
+         element2.click();
+      } catch (Exception e) {
+         throw new org.openqa.selenium.TimeoutException(e);
+      }
+finally {
+
+
+
+
+
 
 //    //  cartForm.eliminateBookBtnClick();
 
-      // cartForm.waitUntil(ExpectedConditions.visibilityOf((WebElement) cartForm), 1000) ;
-      // bookPage.cartBtnClick();
-      //CartForm cartForm = homePage.getCartForm();
-    //  cartForm.isUIObjectPresent();
-     // cartForm.eliminateBookBtnClick();
-   //   cartForm.confirmBuyFooterBtnClick();
+         // cartForm.waitUntil(ExpectedConditions.visibilityOf((WebElement) cartForm), 1000) ;
+         // bookPage.cartBtnClick();
+         CartForm cartForm = homePage.getCartForm();
+         //  cartForm.isUIObjectPresent();
+         // cartForm.eliminateBookBtnClick();
+         // cartForm.confirmBuyFooterBtnClick();
 
 
+         homePage.cartBtnClick();
+         cartForm.confirmBuyFooterBtnClick();
+
+
+      }
 
    }
 }

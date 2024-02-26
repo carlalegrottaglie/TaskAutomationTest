@@ -1,25 +1,23 @@
 package com.carina.demo;
 
-import com.solvd.carina.demo.gui.carinademo.android.Frame;
-import com.solvd.carina.demo.gui.carinademo.android.UIElementsPage;
+import com.solvd.carina.demo.gui.carinademo.common.UIElementsBasePage;
+import com.solvd.carina.demo.gui.carinademo.common.FrameBasePage;
 import com.solvd.carina.demo.gui.carinademo.common.HomePageBase;
 import com.solvd.carina.demo.gui.carinademo.common.LoginPageBase;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.testng.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.zebrunner.carina.core.IAbstractTest;
-import com.carina.demo.mobile.gui.pages.common.CarinaDescriptionPageBase;
-import com.carina.demo.mobile.gui.pages.common.ContactUsPageBase;
 
-import com.carina.demo.mobile.gui.pages.common.UIElementsPageBase;
-import com.carina.demo.mobile.gui.pages.common.WebViewPageBase;
-import com.carina.demo.mobile.gui.pages.common.WelcomePageBase;
-import com.carina.demo.utils.MobileContextUtils;
-import com.carina.demo.utils.MobileContextUtils.View;
-import com.zebrunner.agent.core.annotation.TestLabel;
-import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
+
+
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
+
+import java.time.Duration;
 
 public class MobileSampleTest implements IAbstractTest, IMobileUtils {
 
@@ -97,17 +95,45 @@ public class MobileSampleTest implements IAbstractTest, IMobileUtils {
 
         HomePageBase homePage = initPage(HomePageBase.class);
         LoginPageBase loginPage = homePage.clickNextBtn();
+
+        String username = "Carla";
+        String password = RandomStringUtils.randomAlphabetic(10);
+        loginPage.typeName(username);
+        loginPage.typePassword(password);
+        loginPage.selectFemaleSex();
+        loginPage.checkPrivacyPolicyCheckbox();
+        loginPage.login();
     }
 
     @Test
     public void UIElementsTest()
     {
-
-        HomePageBase homePage = initPage(HomePageBase.class);
+        HomePageBase homePage = initPage(getDriver(),HomePageBase.class);
         LoginPageBase loginPage = homePage.clickNextBtn();
-        Frame frame = initPage(Frame.class);
-        frame.navigatorUpClick();
-        UIElementsPage uiElementsPage = initPage(UIElementsPage.class);
 
+        String username = "Carla";
+        String password = RandomStringUtils.randomAlphabetic(10);
+        loginPage.typeName(username);
+        loginPage.typePassword(password);
+        loginPage.selectFemaleSex();
+        loginPage.checkPrivacyPolicyCheckbox();
+        loginPage.onlyClickLoginBtn();
+        FrameBasePage frame = initPage(FrameBasePage.class);
+        frame.navigateToUIElementsPage();
+        UIElementsBasePage uiElementsPage = initPage(UIElementsBasePage.class);
+        uiElementsPage.typeText("Darth Vader");
+        uiElementsPage.typeEmail("GOT@darkside.org");
+        uiElementsPage.typeDate("06/06/41");
+        uiElementsPage.checkCopy();
+        uiElementsPage.swipeToFemaleRadioButton();
+        uiElementsPage.clickOnFemaleRadioButton();
+        uiElementsPage.swipeToEnabled();
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebElement progressBar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("switch1")));
+
+        //uiElementsPage.setProgressBar(3);
+        //uiElementsPage.setProgressBar2(5);
+       // uiElementsPage.setSeekBar(6);
+        uiElementsPage.setEnabled();
     }
 }

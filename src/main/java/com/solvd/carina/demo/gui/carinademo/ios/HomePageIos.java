@@ -2,7 +2,6 @@ package com.solvd.carina.demo.gui.carinademo.ios;
 
 import com.solvd.carina.demo.gui.carinademo.common.HomePageBase;
 import com.solvd.carina.demo.gui.carinademo.common.LoginPageBase;
-import com.solvd.carina.demo.gui.carinademo.component.ComponentBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 

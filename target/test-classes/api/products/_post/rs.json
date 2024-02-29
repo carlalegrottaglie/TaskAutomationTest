@@ -1,4 +1,7 @@
 {
   "id": "type:Integer",
-  <#if title??>"title": "${title}"</#if>
+  <#if title??>"title": "${title}"</#if>,
+  <#if description??>"description": "${description}"</#if>,
+  <#if brand??>"brand": "${brand}"</#if>,
+  <#if category??>"category": "${category}"</#if>
 }

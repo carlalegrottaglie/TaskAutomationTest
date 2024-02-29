@@ -9,9 +9,9 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/products/1", methodType = HttpMethodType.POST)
-@RequestTemplatePath(path = "api/products/_post/rq.json")
-@ResponseTemplatePath(path = "api/products/_post/rs.json")
+@Endpoint(url = "${base_url}/products/2", methodType = HttpMethodType.PATCH)
+@RequestTemplatePath(path = "api/products/_patch/rq.json")
+@ResponseTemplatePath(path = "api/products/_patch/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PatchProduct extends AbstractApiMethodV2 {
 

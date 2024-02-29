@@ -1,12 +1,15 @@
-package com.carina.demo.mobile.gui.pages.common;
+package com.solvd.carina.demo.gui.carinademo.common;
 
-import org.openqa.selenium.WebDriver;
 
+import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
-public abstract class UIElementsPageBase extends AbstractPage {
+public abstract class UIElementsBasePage extends AbstractPage {
 
-    public UIElementsPageBase(WebDriver driver) {
+
+    protected UIElementsBasePage(WebDriver driver) {
         super(driver);
     }
 
@@ -38,5 +41,12 @@ public abstract class UIElementsPageBase extends AbstractPage {
 
     public abstract void swipeToFemaleRadioButton();
 
+    public abstract  void  setProgressBar (int i);
 
+    public  abstract void  setProgressBar2 (int i);
+    public abstract  void  setSeekBar (int i);
+
+    public  abstract void  setEnabled ();
+
+    public abstract void swipeToEnabled();
 }

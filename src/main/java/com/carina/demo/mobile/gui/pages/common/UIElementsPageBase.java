@@ -38,5 +38,4 @@ public abstract class UIElementsPageBase extends AbstractPage {
 
     public abstract void swipeToFemaleRadioButton();
 
-
 }
